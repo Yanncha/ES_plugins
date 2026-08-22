@@ -1,6 +1,9 @@
-# **my endless-sky-plugins**
+# **Endless Sky plugins**
 
-Instruction how to setup the repo can be found <a href="instructions.md">here</a>.
+A collection of some plugins for the space trading, exploration and combat game <a href="https://endless-sky.github.io/">Endless Sky</a>.
+
+
+Repository organisation is based on Zuckung's <a href="https://github.com/zuckung/endless-sky-plugins/raw/refs/heads/main/tools/plugin_repo_template.zip">plugin_repo_template.zip</a>, which contains needed instructions to create and run such a repository on GitHub, with very useful tools. Thanks!
 
 <br>
 
