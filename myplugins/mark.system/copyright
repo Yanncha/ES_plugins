@@ -1,0 +1,12 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: mark.system
+Upstream-Contact: Yanncha <xxx>
+Source: https://github.com/endless-sky/endless-sky
+
+Files: *
+Copyright: Yanncha <xxx>
+License: GPL-3+
+
+Files: images/*
+Copyright: Yanncha <xxx>
+License: CC-BY-SA-4.0

@@ -1,0 +1,151 @@
+# Copyright (c) 2026 by Yanncha
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+color "mark: selected" .1 .8 .1 0.
+color "mark: unselected" .1 .5 .2 0.
+
+# Mission to mark and unmark systems from the job board
+# Same planet can be marked multiple times, player is asked for a short note to be added to the logbook.
+# It doesn't seem currently possible to mark which system has which note, and the "log" action does not parse substitutions for categories, which makes notes management more difficult.
+# So, notes are managed with a "garbage collector" writing "obsolescence markers" in the logbook and purging the whole category when all marks are removed from map.
+# This missions never completes and is meant to be manually cancelled to remove marker from a given system. This can be done anywhere (landed on any planet or in space).
+
+mission "Mark current"
+	name "Mark <planet>"
+	description `Marked <destination> on the map. See logbook for additional note.`
+	color selected "mark: selected"
+	color unselected "mark: unselected"
+	color unavailable "mark: unselected"
+	job
+	repeat
+	on accept
+		conversation
+			`Note to add with the marker:`
+			choice
+				`	Come back`
+					goto "Come back"
+				`	Spaceport`
+					goto "Spaceport"
+				`	Trade`
+					goto "Trade"
+				`	Shipyard`
+					goto "Shipyard"
+				`	Outfitter`
+					goto "Outfitter"
+				`	Mine`
+					goto "Mine"
+				`	Explore`
+					goto "Explore"
+				`	Curiosity`
+					goto "Curiosity"
+				`	Danger`
+					goto "Danger"
+				`	Rescue`
+#					goto "Rescue"
+			
+#			label "Rescue"
+			action
+				log "Notes" "Rescue" `<destination>`
+			goto "accept"
+			
+			label "Come back"
+			action
+				log "Notes" "Come back" `<destination>`
+			goto "accept"
+			
+			label "Spaceport"
+			action
+				log "Notes" "Spaceport" `<destination>`
+			goto "accept"
+			
+			label "Trade" `<destination>`
+			action
+				log "Notes" "Trade" `<destination>`
+			goto "accept"
+			
+			label "Shipyard" `<destination>`
+			action
+				log "Notes" "Shipyard" `<destination>`
+			goto "accept"
+			
+			label "Outfitter"
+			action
+				log "Notes" "Outfitter" `<destination>`
+			goto "accept"
+			
+			label "Mine"
+			action
+				log "Notes" "Mine" `<destination>`
+			goto "accept"
+			
+			label "Explore"
+			action
+				log "Notes" "Explore" `<destination>`
+			goto "accept"
+			
+			label "Curiosity"
+			action
+				log "Notes" "Curiosity" `<destination>`
+			goto "accept"
+			
+			label "Danger"
+			action
+				log "Notes" "Danger" `<destination>`
+			# goto "accept"
+			
+			label "accept"
+			`Basic datapad:`
+			`	System marked on map and note added to the logbook.`
+			`	Cancel mission to erase marker. Notes are purged whenever all marking missions are closed.`
+				accept
+	to complete
+		never
+	on abort
+		conversation "garbage collector"
+
+# Put this in a separate conversation to have conditions evaluated at run time and not when mission is accepted
+conversation "garbage collector"
+	branch "purge notes" "unmark"
+		"Mark current: active" < 1
+	
+	label "purge notes"
+	`Basic datapad:`
+	`	No system marked on the map. Purging logbook notes...`
+	`	Done.`
+	
+	action
+		remove log "Notes"
+	goto "end"
+	
+	label "unmark"
+	`Basic datapad:`
+	`	<destination> unmarked from the map.`
+	``
+	`	A current ship to datapad interface limitation prevents us from clearing associated notes from your system logbook until all marks are removed from the map. For now, a marker is added to the logbook to identify obsolete notes.`
+	`	We apologize from the inconvenience and will be working with the ship systems' designers to solve this issue in a coming firmware update.`
+	action
+		log "Notes" ". Obsolescence markers" `<destination>`
+	
+	label "end"
+
+# A silly Easter egg news inspired by the "convicted criminal" one
+news "convicted gardner"
+	location
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+	name
+		word
+			"Convicted Gardner"
+	message
+		word
+			`"`
+		word
+			"I fought the lawn, and the lawn was mown."
+		word
+			`"`

@@ -1,0 +1,1 @@
+Allows to mark and unmark systems from the job board.
