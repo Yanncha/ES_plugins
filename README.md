@@ -1,14 +1,28 @@
-check <a href="instructions.md">instructions.md</a> for details how this repo works and what to do to set it up correctly.
-  
+# **my endless-sky-plugins**
 
+Instruction how to setup the repo can be found <a href="instructions.md">here</a>.
+
+<br>
+
+<br>
 
 ## Latest News:
-<table><tr><td><img width="882" height="1"><br>2025-04-10 | initial template repository setup<br>
-<img width="882" height="1"><br></td></tr></table>
+<table>
+<tr>
+<td><img width="882" height="1"><br>
+2026-08-22 | update: mark.system<br>
+2025-04-10 | initial template repository setup<br>
+<img width="882" height="1"><br>
+</td>
+</tr>
+</table>
+
 
 ## Plugin List:<br>
-<table><tr valign="top"><td><img width="294" height="1"><br>
-<a href="README.md#exampleplugin">example.plugin</a><br>
+<table>
+<tr valign="top">
+<td><img width="294" height="1"><br>
+<a href="README.md#marksystem">mark.system</a><br>
 <img width="294" height="1"><br></td><td><img width="294" height="1"><br>
 <img width="294" height="1"><br></td></tr></table>
 
@@ -18,49 +32,17 @@ check <a href="instructions.md">instructions.md</a> for details how this repo wo
 
 ---
 
-### example.plugin
+### mark.system
 
-<img src="myplugins/example.plugin/icon.png" height="100">
+<img src="myplugins/mark.system/icon.png" height="100">
 
-[example.plugin.zip](https://github.com/zuckungtest/plugintemplate/releases/download/v1.0.2-example.plugin/example.plugin.zip) | 375.25 kb | 2025-04-12 | [view files](https://github.com/zuckungtest/plugintemplate/tree/main/myplugins/example.plugin/) | <a href="res/imagemd/example.plugin.md">view images</a> [9]<br>
+[mark.system.zip](https://github.com/Yanncha/ES_plugins/releases/download/v1.0.0-mark.system/mark.system.zip) | 32.09 kb | 2026-08-22 | [view files](https://github.com/Yanncha/ES_plugins/tree/main/myplugins/mark.system/) <a href="res/imagemd/mark.system.md">view images</a> [1]<br>
 <br>
->Adds a mission on "Navigeo Yards" to get the 3 Avgi licenses. See the README for details.
+>Allows to mark and unmark systems from the job board, with an associated pager-like short note chosen from a list and written in the logbook.
 
 <details>
 <summary>:blue_book: Plugin readme</summary>
-<blockquote>### avgi.licenses<br>
-
-<br>
-
-Adds a mission on "Navigeo Yards" to get the 3 Avgi licenses.<br>
-
-<br>
-
-<br>
-
-When you have completed the Avgi Intro (Avgi: Twilight Escape 3: done), land on "Navigeo Yards". You have a 20% chance kn getting the licenses mission, which leads you to the Gossamer system, where you have to mine some stuff and bring it back. Licenses have new images. You also get an unassigned Avgi unique.<br>
-
-<br>
-
-<br>
-
-Changelog:<br>
-
-<br>
-
-2025-02-06<br>
-
-initial release<br>
-
-</blockquote>
+<blockquote>N/A</blockquote>
 </details>
-<br>
-screenshots(click to enlarge):<br>
-<table>
-	<tr>
-		<td><img src="https://raw.githubusercontent.com/zuckungtest/plugintemplate/master/screenshots/example.plugin01.jpg" width="200"></td>
-	</tr>
-</table>
-<br>
 
 <br>
