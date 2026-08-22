@@ -1,12 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: mark.system
-Upstream-Contact: Yanncha <xxx>
-Source: https://github.com/endless-sky/endless-sky
+Upstream-Contact: Yanncha <13353418+Yanncha@users.noreply.github.com>
+Source: https://github.com/Yanncha/ES_plugins/myplugins/mark.system
 
 Files: *
-Copyright: Yanncha <xxx>
+Copyright: 2026 Yanncha <13353418+Yanncha@users.noreply.github.com>
 License: GPL-3+
 
-Files: images/*
-Copyright: Yanncha <xxx>
+Files: icon.png
+Copyright: 2026 Yanncha <13353418+Yanncha@users.noreply.github.com>
+  Derived from original map.png distributed with Endless Sky game, by Michael Zahniser and contributors
 License: CC-BY-SA-4.0
