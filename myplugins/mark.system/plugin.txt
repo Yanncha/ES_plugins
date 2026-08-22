@@ -1,6 +1,6 @@
 name "mark.system"
 about "Allows to mark and unmark systems from the job board, with an associated pager-like short note chosen from a list and written in the logbook."
 authors "Yanncha"
-version "0.1.0"
+version "1.0.1"
 dependencies
 	"game version" "0.11.2"
